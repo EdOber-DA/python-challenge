@@ -45,14 +45,13 @@ with open(BankData_csv_path, 'r') as csvfile:
         elif Profit_Loss_Amt < Greatest_Decrease_Amt:
             Greatest_Decrease_Amt =  Profit_Loss_Amt
             Greatest_Decrease_Date = Entry_Date
-        # TESTING - reading the data??
-        print(f'GIA={Greatest_Increase_Amt},GID={Greatest_Increase_Date},GDA={Greatest_Decrease_Amt}, GDD={Greatest_Decrease_Date}')
 
-
-
-
-# Calculate the changes in "Profit/Loss" and average of the changes
-
-# Calculate the Greatest Increase: (Date and Amount) 
-
-# Calculate the Greatest Decrease: (Date and Amount)
+# Wrap up and Print
+# Print to Terminal
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months: {Total_Months}")
+print(f"Total: ${Total_Profit_Loss}")
+print(f"Average  Change: ${float(Total_Profit_Loss/Total_Months)}")
+print(f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt})")
+print(f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt})")
