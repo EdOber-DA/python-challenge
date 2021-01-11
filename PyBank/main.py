@@ -48,10 +48,10 @@ with open(BankData_csv_path, 'r') as csvfile:
 
 # Wrap up and Print
 # Print to Terminal
-print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {Total_Months}")
-print(f"Total: ${Total_Profit_Loss}")
-print(f"Average  Change: ${float(Total_Profit_Loss/Total_Months)}")
-print(f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt})")
-print(f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt})")
+print(f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {Total_Months}\n"
+    f"Total: ${Total_Profit_Loss:,}\n"
+    f"Average  Change: ${float(Total_Profit_Loss/Total_Months):,.2f}\n"
+    f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt:,})\n"
+    f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt:,})")
