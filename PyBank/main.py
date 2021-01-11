@@ -66,5 +66,5 @@ with open(BankDataAnalysis_csv_path, 'w',newline="") as csvfileout:
      csvwriter.writerow([f"Total Months: {Total_Months}"])
      csvwriter.writerow([f"Total: ${Total_Profit_Loss:,}"])
      csvwriter.writerow([f"Average Change: ${float(Total_Profit_Loss/Total_Months):,.2f}"])
-     csvwriter.writerow([f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt:,}"])
+     csvwriter.writerow([f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt:,})"])
      csvwriter.writerow([f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt:,})"])
