@@ -9,14 +9,7 @@
 import os, csv
 
 # Initialize variables for the Analysis
-#Total_Months = 0                    # Count of the Number of months in the analysis
-#Total_Profit_Loss = 0               # Sum of the Profit / Loss for each of the months
-
-#Greatest_Increase_Amt = 0           # Largest Profit over the entire period of analysis 
-#Greatest_Increase_Date = "MMM-YYYY" # Date when the Largest Profit occured during the entire period of analysis
-
-#Greatest_Decrease_Amt = 0           # Largest Loss over the entire period of analysis 
-#Greatest_Decrease_Date = "MMM-YYYY" # Date when the Largest Loss occured during the entire period of analysis
+candidate = {}        # Empty set that will contain the candidate names and vote counters
 
 # -----------------------------------
 # --- Setup Input File Processing ---
@@ -33,34 +26,32 @@ with open(PollData_csv_path, 'r') as csvfilein:
 
     # Store the initial header line
     PollData_Header = next(PollData_row)
-    print(PollData_Header)
+
 # -----------------------------------
 # --- Main Processing Loop        ---
 # -----------------------------------
     # Loop through the data 
     for row in PollData_row:
 
-        # Read the Profit_loss and Entry_date for the current row for readability of the code below
+        # Read the Voter_ID, County, and Candidate for the current row for readability of the code below
+        # Note: Voter_Id and County are being read only for future use in some extended work later on County tally's and voter audits
         Voter_ID = row[0]
         County = row[1]
         Candidate = row[2]
-# TESTING PRINT        
-        print(f"{Voter_ID}  {County}  {Candidate}")
-        # Read Each set of data and calculate running numbers
-#        Total_Months += 1                    # Find the total number of months, which is the count of entries
-#        Total_Profit_Loss += Profit_Loss_Amt # Find the net total amount of "Profit/Losses" over the period by adding each entry
 
-        # Look to see if the current entry is a greater increase or decrease
-#        if  Profit_Loss_Amt > Greatest_Increase_Amt:
-#            Greatest_Increase_Amt =  Profit_Loss_Amt
-#            Greatest_Increase_Date = Entry_Date
-#        elif Profit_Loss_Amt < Greatest_Decrease_Amt:
-#            Greatest_Decrease_Amt =  Profit_Loss_Amt
-#            Greatest_Decrease_Date = Entry_Date
-  
+        if candidate.get(Candidate) == None:
+                candidate[Candidate] = 1
+        else: candidate[Candidate] +=1 
+
 # ------------------------------
 # --- Finish and Output Data ---
 # ------------------------------
+print(f'candidate list and votes = {candidate}')
+
+sorted_by_votes = sorted(candidate.items(), key= lambda vote_count: vote_count[1], reverse=True)
+
+print(f'sorted by votes= {sorted_by_votes}')
+
 # Print to Terminal
 #print(f"Financial Analysis\n"
 #    f"----------------------------\n"
