@@ -10,7 +10,7 @@ import os, csv
 
 # Initialize variables for the Analysis
 candidate = {}        # Empty set that will contain the candidate names and vote counters
-
+Total_Votes = 0       # Total Vote count 
 # -----------------------------------
 # --- Setup Input File Processing ---
 # -----------------------------------
@@ -39,27 +39,37 @@ with open(PollData_csv_path, 'r') as csvfilein:
         County = row[1]
         Candidate = row[2]
 
-        if candidate.get(Candidate) == None:
-                candidate[Candidate] = 1
-        else: candidate[Candidate] +=1 
+        # Add Votes
+        Total_Votes += 1                     # Add 1 vote to the total votes counted  
+        if candidate.get(Candidate) == None: # This looks up the candidate in the dictitonary.  If None returned, they are not in it
+                candidate[Candidate] = 1     # This adds the candidate to the dictionary, and initializes them with their first vote
+        else: candidate[Candidate] += 1      # Since we had a valid return, we use their name as a key, and add 1 to their vote total    
 
 # ------------------------------
 # --- Finish and Output Data ---
 # ------------------------------
-print(f'candidate list and votes = {candidate}')
 
+# Sort the dictionary by the votes in descending order (reverse=True) and put in sorted_by_votes
 sorted_by_votes = sorted(candidate.items(), key= lambda vote_count: vote_count[1], reverse=True)
 
-print(f'sorted by votes= {sorted_by_votes}')
+######## Test Print Block #########
+# print(f'candidate list and votes = {candidate}')
+# print(f'sorted by votes= {sorted_by_votes}')
+######## Test Print Block #########
+
+Winner = list(candidate.keys())[0]
 
 # Print to Terminal
-#print(f"Financial Analysis\n"
-#    f"----------------------------\n"
-#    f"Total Months: {Total_Months}\n"
-#    f"Total: ${Total_Profit_Loss:,}\n"
-#    f"Average Change: ${float(Total_Profit_Loss/Total_Months):,.2f}\n"
-#    f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt:,})\n"
-#    f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt:,})")
+print(f"Election Results\n"
+    f"----------------------------\n"
+    f"Total Votes: {Total_Votes:,}\n"
+    f"----------------------------")
+for x in sorted_by_votes:
+    print(f"{x[0]}:  {float(100*(x[1]/Total_Votes)):.3f}% ({x[1]:,})")
+print(f"----------------------------\n"
+    f"Winner: {Winner}\n"
+    f"----------------------------")
+
 
 # Set Path to the output file in the analysis folder
 #BankDataAnalysis_csv_path = os.path.join('analysis', 'budget_data_analysis.csv')
