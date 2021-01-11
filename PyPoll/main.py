@@ -9,8 +9,9 @@
 import os, csv
 
 # Initialize variables for the Analysis
-candidate = {}        # Empty set that will contain the candidate names and vote counters
+candidate = {}        # Initialize and empty set that will be updated to contain the candidate names and vote counters
 Total_Votes = 0       # Total Vote count 
+
 # -----------------------------------
 # --- Setup Input File Processing ---
 # -----------------------------------
@@ -35,9 +36,9 @@ with open(PollData_csv_path, 'r') as csvfilein:
 
         # Read the Voter_ID, County, and Candidate for the current row for readability of the code below
         # Note: Voter_Id and County are being read only for future use in some extended work later on County tally's and voter audits
-        Voter_ID = row[0]
-        County = row[1]
-        Candidate = row[2]
+        Voter_ID = row[0]       # for future use
+        County = row[1]         # for future use
+        Candidate = row[2]      # will be used in the dictionary lookup
 
         # Add Votes
         Total_Votes += 1                     # Add 1 vote to the total votes counted  
@@ -52,35 +53,44 @@ with open(PollData_csv_path, 'r') as csvfilein:
 # Sort the dictionary by the votes in descending order (reverse=True) and put in sorted_by_votes
 sorted_by_votes = sorted(candidate.items(), key= lambda vote_count: vote_count[1], reverse=True)
 
-######## Test Print Block #########
-# print(f'candidate list and votes = {candidate}')
-# print(f'sorted by votes= {sorted_by_votes}')
-######## Test Print Block #########
-
-Winner = list(candidate.keys())[0]
-
 # Print to Terminal
+# Print the headers
 print(f"Election Results\n"
     f"----------------------------\n"
     f"Total Votes: {Total_Votes:,}\n"
     f"----------------------------")
+
+# Loop through the candidates and print a nice formatted summary
 for x in sorted_by_votes:
-    print(f"{x[0]}:  {float(100*(x[1]/Total_Votes)):.3f}% ({x[1]:,})")
+    namejust = (x[0]+":").ljust(10)
+    print(f"{namejust:10} {float(100*(x[1]/Total_Votes)):6.3f}%  ({x[1]:,})")
+
+# Print the trailer with the winner
 print(f"----------------------------\n"
-    f"Winner: {Winner}\n"
+    f"Winner: {sorted_by_votes[0][0]}\n"    # the first entry, first part is the winner's name
     f"----------------------------")
 
 
 # Set Path to the output file in the analysis folder
-#BankDataAnalysis_csv_path = os.path.join('analysis', 'budget_data_analysis.csv')
+PollDataAnalysis_csv_path = os.path.join('analysis', 'poll_data_analysis.csv')
 
 # Open the data file with write capabilities
-#with open(BankDataAnalysis_csv_path, 'w',newline="") as csvfileout:
-#     csvwriter = csv.writer(csvfileout, delimiter=',')
+with open(PollDataAnalysis_csv_path, 'w',newline="") as csvfileout:
+    csvwriter = csv.writer(csvfileout, delimiter=',')
 #     csvwriter.writerow(["Financial Analysis"])
-#     csvwriter.writerow(["----------------------------"])
-#     csvwriter.writerow([f"Total Months: {Total_Months}"])
-#     csvwriter.writerow([f"Total: ${Total_Profit_Loss:,}"])
-#     csvwriter.writerow([f"Average Change: ${float(Total_Profit_Loss/Total_Months):,.2f}"])
-#     csvwriter.writerow([f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_Amt:,})"])
-#     csvwriter.writerow([f"Greatest Decrease in Profits: {Greatest_Decrease_Date} (${Greatest_Decrease_Amt:,})"])
+# Print to Terminal
+# Print the headers
+    csvwriter.writerow(["Election Results"])
+    csvwriter.writerow(["----------------------------"])
+    csvwriter.writerow([f"Total Votes: {Total_Votes:,}"])
+    csvwriter.writerow(["----------------------------"])
+
+# Loop through the candidates and print a nice formatted summary
+    for x in sorted_by_votes:
+        namejust = (x[0]+":").ljust(10)
+        csvwriter.writerow(f"{namejust:10} {float(100*(x[1]/Total_Votes)):6.3f}%  ({x[1]:,})")
+
+# Print the trailer with the winner
+        csvwriter.writerow(f"----------------------------\n"
+        f"Winner: {sorted_by_votes[0][0]}\n"    # the first entry, first part is the winner's name
+        f"----------------------------")
