@@ -52,6 +52,7 @@ with open(BankData_csv_path, 'r') as csvfilein:
         if  Profit_Loss_Amt > Greatest_Increase_Amt:
             Greatest_Increase_Amt =  Profit_Loss_Amt
             Greatest_Increase_Date = Entry_Date
+            
         elif Profit_Loss_Amt < Greatest_Decrease_Amt:
             Greatest_Decrease_Amt =  Profit_Loss_Amt
             Greatest_Decrease_Date = Entry_Date
