@@ -1,8 +1,8 @@
-# Python Homework Submission - Python Homework - Py Me Up, Charlie
+# Python Homework Submission - Py Me Up, Charlie
 
 ## Overview
 
-This is the Python Homework - Py Me Up, Charlie Homework Submission.
+This is the Python Homework submission for: Py Me Up, Charlie  
 
 Included in this repository are: 
 * Python Files that solve the homeworks assignments
@@ -18,11 +18,11 @@ Included in this repository are:
 
 * 2 files with the solutions to the assignment:
 
-  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file] and creates the summary output to the terminal and [analysis.csv file](analysis.budget_data_analysis)
+  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](Resources/budget_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](analysis/budget_data_analysis.csv)
 
-  * [Bonus Assignment](Code/VBA_Challenge_-_Wall_Street_Bonus_Assignment.bas) - Scans the above summary file and creates the worksheets and creates the summary file by ticker
+  * [PyPoll Code](PyPoll/main.py) - reads the [polling data csv file](Resources/election_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](analysis/poll_data_analysis.csv)
 
-  * [Bonus + Dup Search](Code/VBA_Challenge_-_Wall_Street_Bonus_Assignment_With_Dup_Check.bas) - Added feature to look for and print dups
+  * [Dup Search](Code/VBA_Challenge_-_Wall_Street_Bonus_Assignment_With_Dup_Check.bas) - Added feature to look for and print dups
 
 * [Screen Shots](Images) - Screen Shots of each yearly worksheets showing the final results.
 
