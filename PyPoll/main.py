@@ -53,7 +53,10 @@ with open(PollData_csv_path, 'r') as csvfilein:
 # Sort the dictionary by the votes in descending order (reverse=True) and put in sorted_by_votes
 sorted_by_votes = sorted(candidate.items(), key= lambda vote_count: vote_count[1], reverse=True)
 
-# Print to Terminal
+# ------------------------------
+# --- Print to the terminal  ---
+# ------------------------------
+
 # Print the headers
 print(f"Election Results\n"
     f"----------------------------\n"
@@ -70,6 +73,9 @@ print(f"----------------------------\n"
     f"Winner: {sorted_by_votes[0][0]}\n"    # the first entry, first part is the winner's name
     f"----------------------------")
 
+# ------------------------------
+# --- Print to the file      ---
+# ------------------------------
 
 # Set Path to the output file in the analysis folder
 PollDataAnalysis_csv_path = os.path.join('analysis', 'poll_data_analysis.csv')
@@ -77,20 +83,19 @@ PollDataAnalysis_csv_path = os.path.join('analysis', 'poll_data_analysis.csv')
 # Open the data file with write capabilities
 with open(PollDataAnalysis_csv_path, 'w',newline="") as csvfileout:
     csvwriter = csv.writer(csvfileout, delimiter=',')
-#     csvwriter.writerow(["Financial Analysis"])
-# Print to Terminal
+
 # Print the headers
     csvwriter.writerow(["Election Results"])
     csvwriter.writerow(["----------------------------"])
     csvwriter.writerow([f"Total Votes: {Total_Votes:,}"])
     csvwriter.writerow(["----------------------------"])
 
-# Loop through the candidates and print a nice formatted summary
+#   Loop through the candidates and print a nice formatted summary
     for x in sorted_by_votes:
         namejust = (x[0]+":").ljust(10)
-        csvwriter.writerow(f"{namejust:10} {float(100*(x[1]/Total_Votes)):6.3f}%  ({x[1]:,})")
+        csvwriter.writerow([f"{namejust:10} {float(100*(x[1]/Total_Votes)):6.3f}%  ({x[1]:,})"])
 
 # Print the trailer with the winner
-        csvwriter.writerow(f"----------------------------\n"
-        f"Winner: {sorted_by_votes[0][0]}\n"    # the first entry, first part is the winner's name
-        f"----------------------------")
+    csvwriter.writerow([f"----------------------------"])
+    csvwriter.writerow([f"Winner: {sorted_by_votes[0][0]}"])    # the first entry, first part is the winner's name
+    csvwriter.writerow([f"----------------------------"])
