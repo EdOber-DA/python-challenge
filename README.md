@@ -18,7 +18,7 @@ Included in this repository are:
 
 * 2 files with the solutions to the assignment:
 
-  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/Resources/budget_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
+  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/budget_data_1.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
 
   * [PyPoll Code](PyPoll/main.py) - reads the [polling data csv file](PyPoll/Resources/election_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyPoll/analysis/poll_data_analysis.csv)
 
