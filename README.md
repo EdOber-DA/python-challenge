@@ -14,7 +14,7 @@ Included in this repository are:
 
 ### Files
 
-* 2 folders with the solutions to the assignment:
+* 2 folders with the solutions to the 2 assignments:
 
   * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/Resources/budget_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
 
