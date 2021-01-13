@@ -14,19 +14,17 @@ Included in this repository are:
 
 ### Files
 
-* 2 folders with the solutions to the assignment: (NOTE _ NEED TO ADJUST ON THE EXTRA WORK)
+* 2 folders with the solutions to the assignment:
 
   * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/Resources/budget_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
 
   * [PyPoll Code](PyPoll/main.py) - reads the [polling data csv file](PyPoll/Resources/election_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyPoll/analysis/poll_data_analysis.csv)
 
-  * [Dup Search](PyPoll/main2.py) - Added feature to look for Voter_IDs that appear more than once and print dups
-
 * [Screen Shots](Images) - Folder with all the screen shots (also shown below) of each output showing the final results.
 
 * [Other](Other) - Folder with additional info  
 
-  * [Word Doc of Screen Shots](Other/PY_Me_Up_Charlie_Screenshots.docx) - Is a word document that consolidates all the screenshots for both exercises and both sets of outputs. 
+  * [Word Doc of Screen Shots](Other/Python_PY_Me_Up_Charlie_Screenshots.docx) - Is a word document that consolidates all the screenshots for both exercises and both sets of outputs. 
 
   
 ### Screen Shots for Output
