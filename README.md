@@ -16,13 +16,13 @@ Included in this repository are:
 
 * 2 files with the solutions to the assignment: (NOTE _ NEED TO ADJUST ON THE EXTRA WORK)
 
-  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/budget_data_1.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
+  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/budget_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
 
   * [PyPoll Code](PyPoll/main.py) - reads the [polling data csv file](PyPoll/Resources/election_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyPoll/analysis/poll_data_analysis.csv)
 
   * [Dup Search](PyPoll/main2.py) - Added feature to look for Voter_IDs that appear more than and print dups
 
-* [Screen Shots](Images) - Screen Shots of each yearly worksheets showing the final results.
+* [Screen Shots](Images) - Screen Shots (also shown below) of each output showing the final results.
 
 * [Other](Other) - Additional info  
 
