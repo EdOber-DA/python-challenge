@@ -20,6 +20,10 @@ Included in this repository are:
 
   * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/budget_data_1.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
 
+  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv folder](PyBank/analysis) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis)
+
+  * [PyBank Code](PyBank/main.py)- reads the [bank budget data csv file](PyBank/analysis/budget_data_1.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyBank/analysis/budget_data_analysis.csv)
+
   * [PyPoll Code](PyPoll/main.py) - reads the [polling data csv file](PyPoll/Resources/election_data.csv) and prints the summary output to the terminal and creates the output file [analysis.csv](PyPoll/analysis/poll_data_analysis.csv)
 
   * [Dup Search](Code/VBA_Challenge_-_Wall_Street_Bonus_Assignment_With_Dup_Check.bas) - Added feature to look for and print dups
